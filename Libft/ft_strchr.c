@@ -5,32 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjayalin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 15:02:43 by jjayalin          #+#    #+#             */
-/*   Updated: 2021/09/17 15:02:43 by jjayalin         ###   ########.fr       */
+/*   Created: 2021/09/17 17:46:35 by jjayalin          #+#    #+#             */
+/*   Updated: 2021/09/17 17:48:39 by jjayalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "libft.h"
+/** Locates the first occurence of c in a string. The null character \0
+**	is part of the string
+** Input: const char s, int c
+** Return:
+**		ptr to located char
+**		NULL if not in the string
+*/
 
-size_t  ft_strlcat(char *dest, const char *src, size_t destsize)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-    size_t i;
-    size_t j;
-
-    i = 0;
-    j = 0;
-    while (dest[i])
-        i++;
-    if (destsize < i)
-    {
-        while (src[j])
-            j++;
-        return (destsize + j);
-    }
-    while (destsize > 0 && i < destsize - 1 && src[j])
-        dest[i++] = src[j++];
-    dest[i] = '\0';
-    while (src[j++])
-        i++;
-    return (i);
+	while ((*s != '\0') && (*s != c))
+	{
+		s++;
+	}
+	if (*s == c)
+	{
+		return ((char *)s);
+	}
+	return ((char*)NULL);
 }
