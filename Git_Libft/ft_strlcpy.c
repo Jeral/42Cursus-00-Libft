@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jjayalin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/19 18:02:28 by jjayalin          #+#    #+#             */
+/*   Updated: 2021/10/22 16:01:24 by jjayalin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
@@ -20,4 +32,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	return (i);
 }
-//The strlcpy() and strlcat() functions copy and concatenate strings respectively. They are designed to be safer, more consistent, and less error prone replacements for strncpy(3) and strncat(3). Unlike those functions, strlcpy() and strlcat() take the full size of the buffer (not just the length) and guarantee to NUL-terminate the result (as long as size is larger than 0 or, in the case of strlcat(), as long as there is at least one byte free in dst). Note that a byte for the NUL should be included in size. //
+//The strlcpy() and strlcat() functions copy and 
+//concatenate strings respectively. 
+//They are designed to be safer, more consistent, and 
+//less error prone replacements for strncpy(3) and strncat(3). 
+//Unlike those functions, strlcpy() and strlcat() take 
+//the full size of the buffer (not just the length) 
+//and guarantee to NUL-terminate the result 
+//(as long as size is larger than 0 or, 
+//in the case of strlcat(), as long as there is at least one byte free in dst). 
+//Note that a byte for the NUL should be included in size. //

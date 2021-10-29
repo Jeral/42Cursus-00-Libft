@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jjayalin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/19 18:02:26 by jjayalin          #+#    #+#             */
+/*   Updated: 2021/10/19 18:02:35 by jjayalin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
 int	ft_atoi(const char *str)
 {
 	int	res;
@@ -6,8 +19,8 @@ int	ft_atoi(const char *str)
 
 	negative = 1;
 	res = 0;
-	while (*str && (*str == ' ' || *str == '\n' || *str == '\t' ||
-			*str == '\v' || *str == '\f' || *str == '\r'))
+	while (*str && (*str == ' ' || *str == '\n' || *str == '\t'
+			||*str == '\v' || *str == '\f' || *str == '\r'))
 		++str;
 	if (*str == '-')
 		negative = -1;

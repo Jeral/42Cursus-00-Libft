@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjayalin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 18:02:27 by jjayalin          #+#    #+#             */
-/*   Updated: 2021/10/19 18:02:27 by jjayalin         ###   ########.fr       */
+/*   Created: 2021/10/19 18:02:28 by jjayalin          #+#    #+#             */
+/*   Updated: 2021/10/19 18:02:28 by jjayalin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t				i;
-	unsigned char		*ptr;
-	const unsigned char	*ptr2;
+	unsigned int	i;
 
-	ptr = (unsigned char *)dst;
-	ptr2 = (unsigned char *)src;
+	if (!s || !f)
+		return ;
 	i = 0;
-	if (!ptr && !ptr2)
-		return (NULL);
-	if (ptr2 < ptr)
-		while (++i <= len)
-			ptr[len - i] = ptr2[len - i];
-	else
-		while (len-- > 0)
-			*(ptr++) = *(ptr2++);
-	return (dst);
+	while (s[i])
+	{
+		f(i, s + i);
+		i++;
+	}
 }
+// The ft_striteri is taking 
+// f(function as  a parameterto the striteri function);
+// the purpose of this function is to apply the 
+// function put as a 'parameter' 
+// towards each character within the string//
